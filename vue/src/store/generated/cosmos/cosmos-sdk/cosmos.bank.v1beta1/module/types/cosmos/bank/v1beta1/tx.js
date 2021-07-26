@@ -1,7 +1,7 @@
 /* eslint-disable */
 import { Reader, Writer } from 'protobufjs/minimal';
-import { Coin } from '../../base/v1beta1/coin';
-import { Input, Output } from './bank';
+import { Coin } from '../../../cosmos/base/v1beta1/coin';
+import { Input, Output } from '../../../cosmos/bank/v1beta1/bank';
 export const protobufPackage = 'cosmos.bank.v1beta1';
 const baseMsgSend = { fromAddress: '', toAddress: '' };
 export const MsgSend = {
@@ -188,7 +188,7 @@ export const MsgMultiSend = {
             obj.inputs = [];
         }
         if (message.outputs) {
-            obj.outputs = message.outputs.map((e) => e ? Output.toJSON(e) : undefined);
+            obj.outputs = message.outputs.map((e) => (e ? Output.toJSON(e) : undefined));
         }
         else {
             obj.outputs = [];

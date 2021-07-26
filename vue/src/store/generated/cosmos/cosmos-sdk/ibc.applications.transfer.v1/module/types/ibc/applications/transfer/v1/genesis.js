@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { DenomTrace, Params } from './transfer';
+import { DenomTrace, Params } from '../../../../ibc/applications/transfer/v1/transfer';
 import { Writer, Reader } from 'protobufjs/minimal';
 export const protobufPackage = 'ibc.applications.transfer.v1';
 const baseGenesisState = { portId: '' };
@@ -66,13 +66,12 @@ export const GenesisState = {
         const obj = {};
         message.portId !== undefined && (obj.portId = message.portId);
         if (message.denomTraces) {
-            obj.denomTraces = message.denomTraces.map((e) => e ? DenomTrace.toJSON(e) : undefined);
+            obj.denomTraces = message.denomTraces.map((e) => (e ? DenomTrace.toJSON(e) : undefined));
         }
         else {
             obj.denomTraces = [];
         }
-        message.params !== undefined &&
-            (obj.params = message.params ? Params.toJSON(message.params) : undefined);
+        message.params !== undefined && (obj.params = message.params ? Params.toJSON(message.params) : undefined);
         return obj;
     },
     fromPartial(object) {

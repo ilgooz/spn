@@ -1,6 +1,6 @@
 import { Reader, Writer } from 'protobufjs/minimal';
 import { Any } from '../../../../google/protobuf/any';
-import { Height, IdentifiedClientState, ConsensusStateWithHeight, Params } from './client';
+import { Height, IdentifiedClientState, ConsensusStateWithHeight, Params } from '../../../../ibc/core/client/v1/client';
 import { PageRequest, PageResponse } from '../../../../cosmos/base/query/v1beta1/pagination';
 export declare const protobufPackage = "ibc.core.client.v1";
 /**

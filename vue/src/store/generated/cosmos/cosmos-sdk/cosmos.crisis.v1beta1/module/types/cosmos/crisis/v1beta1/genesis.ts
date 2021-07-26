@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { Coin } from '../../base/v1beta1/coin'
+import { Coin } from '../../../cosmos/base/v1beta1/coin'
 import { Writer, Reader } from 'protobufjs/minimal'
 
 export const protobufPackage = 'cosmos.crisis.v1beta1'
@@ -53,10 +53,7 @@ export const GenesisState = {
 
   toJSON(message: GenesisState): unknown {
     const obj: any = {}
-    message.constantFee !== undefined &&
-      (obj.constantFee = message.constantFee
-        ? Coin.toJSON(message.constantFee)
-        : undefined)
+    message.constantFee !== undefined && (obj.constantFee = message.constantFee ? Coin.toJSON(message.constantFee) : undefined)
     return obj
   },
 

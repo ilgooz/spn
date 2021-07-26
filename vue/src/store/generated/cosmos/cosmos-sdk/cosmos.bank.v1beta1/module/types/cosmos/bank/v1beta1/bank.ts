@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { Coin } from '../../base/v1beta1/coin'
+import { Coin } from '../../../cosmos/base/v1beta1/coin'
 import { Writer, Reader } from 'protobufjs/minimal'
 
 export const protobufPackage = 'cosmos.bank.v1beta1'
@@ -118,10 +118,7 @@ export const Params = {
         message.sendEnabled.push(SendEnabled.fromJSON(e))
       }
     }
-    if (
-      object.defaultSendEnabled !== undefined &&
-      object.defaultSendEnabled !== null
-    ) {
+    if (object.defaultSendEnabled !== undefined && object.defaultSendEnabled !== null) {
       message.defaultSendEnabled = Boolean(object.defaultSendEnabled)
     } else {
       message.defaultSendEnabled = false
@@ -132,14 +129,11 @@ export const Params = {
   toJSON(message: Params): unknown {
     const obj: any = {}
     if (message.sendEnabled) {
-      obj.sendEnabled = message.sendEnabled.map((e) =>
-        e ? SendEnabled.toJSON(e) : undefined
-      )
+      obj.sendEnabled = message.sendEnabled.map((e) => (e ? SendEnabled.toJSON(e) : undefined))
     } else {
       obj.sendEnabled = []
     }
-    message.defaultSendEnabled !== undefined &&
-      (obj.defaultSendEnabled = message.defaultSendEnabled)
+    message.defaultSendEnabled !== undefined && (obj.defaultSendEnabled = message.defaultSendEnabled)
     return obj
   },
 
@@ -151,10 +145,7 @@ export const Params = {
         message.sendEnabled.push(SendEnabled.fromPartial(e))
       }
     }
-    if (
-      object.defaultSendEnabled !== undefined &&
-      object.defaultSendEnabled !== null
-    ) {
+    if (object.defaultSendEnabled !== undefined && object.defaultSendEnabled !== null) {
       message.defaultSendEnabled = object.defaultSendEnabled
     } else {
       message.defaultSendEnabled = false
@@ -628,9 +619,7 @@ export const Metadata = {
     const obj: any = {}
     message.description !== undefined && (obj.description = message.description)
     if (message.denomUnits) {
-      obj.denomUnits = message.denomUnits.map((e) =>
-        e ? DenomUnit.toJSON(e) : undefined
-      )
+      obj.denomUnits = message.denomUnits.map((e) => (e ? DenomUnit.toJSON(e) : undefined))
     } else {
       obj.denomUnits = []
     }

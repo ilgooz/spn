@@ -1,8 +1,8 @@
 import { Reader, Writer } from 'protobufjs/minimal';
-import { Header } from '../types/types';
-import { ProofOps } from '../crypto/proof';
-import { EvidenceParams, ValidatorParams, VersionParams } from '../types/params';
-import { PublicKey } from '../crypto/keys';
+import { Header } from '../../tendermint/types/types';
+import { ProofOps } from '../../tendermint/crypto/proof';
+import { EvidenceParams, ValidatorParams, VersionParams } from '../../tendermint/types/params';
+import { PublicKey } from '../../tendermint/crypto/keys';
 export declare const protobufPackage = "tendermint.abci";
 export declare enum CheckTxType {
     NEW = 0,
